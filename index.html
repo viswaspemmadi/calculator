@@ -1,1 +1,124 @@
+<html>
 
+<head>
+    <title>welcome</title>
+    <style type="text/css">
+        #button {
+            height: 25px;
+            width: 55px;
+            border: 0px solid black;
+            box-shadow: 0px 0px 2px 0px;
+            border-radius: 4px;
+            margin-top: 4px;
+        }
+        #buttonS {
+            height: 25px;
+            width: 55px;
+            border: 0px solid black;
+            box-shadow: 0px 0px 2px 0px;
+            border-radius: 4px;
+            margin-top: 4px;
+        }
+
+        table {
+            border-radius: 10px;
+            height: 200px;
+            padding: 5px;
+            margin-top: 100px;
+            box-shadow: 0px 0px 10px 0px;
+        }
+        #result {
+            width: 200px;
+            height: 25px;
+            border-radius: 5px;
+            border: 1px solid white;
+            text-align:right;
+        }
+        #results {
+            text-align: right;
+            width: 200px;
+            height: 25px;
+            border-radius: 5px;
+            border: 1px solid white;
+        }
+        div{
+            border:1px solid black;
+            border-radius: 4px;
+        }
+        #result:hover{
+            border: 1px solid rgb(14, 9, 9);
+        }
+        #results:hover{
+            border:1px solid black;
+        }
+        #result:active{
+            border:1px solid rgb(238, 30, 30);
+        }
+        #results:active{
+            border:1px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <table>
+            <tr>
+                <td colspan="3">
+                    <div><input type="text"  id="results" /> <br>
+                <input type="text"  id="result" placeholder="enter"/></td></div>
+        
+                <td><input type="button" value="AC" id="button" onclick="c()">
+                <br><input type="button" value="DEL" id="buttonS" onclick="cls()" /></br>
+                </td>
+            </tr>
+            <tr>
+                <td><input type="button" value="1" id="button" onclick="num(1)"></td>
+                <td><input type="button" value="2" id="button" onclick="num(2)"></td>
+                <td><input type="button" value="3" id="button" onclick="num(3)"></td>
+                <td><input type="button" value="+" id="button" onclick="num('+')"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="4" id="button" onclick="num(4)"></td>
+                <td><input type="button" value="5" id="button" onclick="num(5)"></td>
+                <td><input type="button" value="6" id="button" onclick="num(6)"></td>
+                <td><input type="button" value="*" id="button" onclick="num('*')"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="7" id="button" onclick="num(7)"></td>
+                <td><input type="button" value="8" id="button" onclick="num(8)"></td>
+                <td><input type="button" value="9" id="button" onclick="num(9)"></td>
+                <td><input type="button" value="-" id="button" onclick="num('-')"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="." id="button" onclick="num('.')"></td>
+                <td><input type="button" value="0" id="button" onclick="num(0)"></td>
+                <td><input type="button" value="%" id="button" onclick="num('%')"></td>
+                <td><input type="button" value="=" id="button" onclick="ans()"></td>
+            </tr>
+        </table>
+</body>
+<script>
+    function num(n) {
+     document.getElementById("result").value += n;
+     let num=n;
+    }
+    function c() {
+        document.getElementById("result").value =" ";
+        document.getElementById("results").value=" ";
+        window.location.href="calculator.html";
+    }
+    function ans() {
+        var number = document.getElementById("result").value;
+        document.getElementById("results").value=number;
+        document.getElementById("result").value = eval(number);
+    }
+      function cls()
+    {
+        var a=document.getElementById("result").value;
+        var b=a/10;
+        document.getElementById("result").value=b;
+    }
+</script>
+
+</html>
